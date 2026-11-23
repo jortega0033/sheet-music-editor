@@ -6,7 +6,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 An offline editor for a musician or teacher: enter a short melody with the keyboard, see it on a treble staff, recover the draft, exchange it as a small MusicXML 4.0 subset and print it. Static JavaScript modules, Canvas 2D, native controls, IndexedDB, a small Node server on `127.0.0.1`, no dependencies.
 
-**Nothing is implemented yet.** The repository holds the plan, the delivery tooling and the backlog in epic #1. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1, the toolchain, the module layout with empty modules, a static server and smoke tests. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
 
 ## Sources of truth
 
@@ -40,8 +40,8 @@ Node 22. No install step is needed.
 
 | Purpose | Command | Status |
 |---|---|---|
-| Tests | `node --test` | planned: real with the scaffold |
-| Run the app | `node server/serve.mjs` | planned: real with the scaffold (static shell), editor from #2 |
+| Tests | `node --test` | real (scaffold) |
+| Run the app | `node server/serve.mjs` | real (scaffold): static empty shell; planned: editor from #2 |
 
 ## Architecture boundaries
 
