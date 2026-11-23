@@ -6,7 +6,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 An offline editor for a musician or teacher: enter a short melody with the keyboard, see it on a treble staff, recover the draft, exchange it as a small MusicXML 4.0 subset and print it. Static JavaScript modules, Canvas 2D, native controls, IndexedDB, a small Node server on `127.0.0.1`, no dependencies.
 
-**Nothing is implemented yet.** The repository holds the plan, the delivery tooling and the backlog in epic #1. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1, the toolchain, the module layout with empty modules, a static server and smoke tests. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing product baseline: the smoke tests cover the scaffold only.
 
 ## Sources of truth
 
@@ -19,7 +19,7 @@ An offline editor for a musician or teacher: enter a short melody with the keybo
 | Project subagents, origin and local changes | [.claude/agency-agents/README.md](.claude/agency-agents/README.md) |
 | Ticket workflow and the step at which each role runs | [.claude/skills/implement-ticket/SKILL.md](.claude/skills/implement-ticket/SKILL.md), section "Agent roles" below |
 | How a ticket goes from the queue to a ready pull request, who may do what | "Delivery workflow" below |
-| UI and copy rules | [docs/ui-quality.md](docs/ui-quality.md) |
+| UI and copy rules, design tokens | [docs/ui-quality.md](docs/ui-quality.md), [docs/design-tokens.md](docs/design-tokens.md) |
 | Decisions the owner made, with dates | [docs/owner-decisions.md](docs/owner-decisions.md) |
 
 The plan wins for product design; the epic and tickets win for order and scope. A ticket that changes a contract fixes the plan in the same pull request.
@@ -40,8 +40,8 @@ Node 22. No install step is needed.
 
 | Purpose | Command | Status |
 |---|---|---|
-| Tests | `node --test` | planned: real with the scaffold |
-| Run the app | `node server/serve.mjs` | planned: real with the scaffold (static shell), editor from #2 |
+| Tests | `node --test` | real (scaffold) |
+| Run the app | `node server/serve.mjs` | real (scaffold): static empty shell; planned: editor from #2 |
 
 ## Architecture boundaries
 
@@ -57,7 +57,7 @@ The planned module map is in [docs/architecture.md](docs/architecture.md). Invar
 - Drafts carry a schema version and a revision. Writes are serialised, the stored revision is compared in the same transaction, and "Saved" appears only after the transaction completes. Unknown or invalid records are kept.
 - Preview and print use the same coordinates. Layout is deterministic for the same score, page size and measured text.
 - Score text is rendered through text APIs, never as HTML. Same-origin assets only; the server binds `127.0.0.1` and serves an allowlist of files.
-- Everything works by keyboard: Tab to controls, arrows inside the list, Enter selects, a labelled Remove deletes. After an insert or removal focus stays in the measure. Selection, remaining ticks and errors are reported as text.
+- Everything works by keyboard: Tab to controls, arrows inside the list, Enter selects an event for editing, a labelled Remove deletes. After an insert or removal focus stays in the measure. Selection, remaining ticks and errors are reported as text.
 - An ordered, labelled measure and event list shows the same score as the canvas.
 
 ## Git workflow
@@ -113,7 +113,7 @@ How a ticket reaches the owner. Each piece is described in its own file; this pa
 - **Pull request:** [`.github/pull_request_template.md`](.github/pull_request_template.md). Tickets use [`.github/ISSUE_TEMPLATE/implementation-ticket.md`](.github/ISSUE_TEMPLATE/implementation-ticket.md).
 - **Labels:** `status:ready`, `status:blocked`, `status:in-progress`, `needs-decision`, `tracking` (parent container, never worked; its sub-issues are the work items).
 - **Changelog:** every ticket pull request adds one line under Unreleased in [CHANGELOG.md](CHANGELOG.md).
-- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`.
+- **UI and copy:** [docs/ui-quality.md](docs/ui-quality.md); the `ui-ux-pro-max` and `unslop` skills are in `.claude/skills/`. Colours come from the shared design tokens in `app/tokens.css` ([docs/design-tokens.md](docs/design-tokens.md)); new UI adds no colour literals.
 - **Decisions:** [docs/owner-decisions.md](docs/owner-decisions.md). Security reports: [SECURITY.md](SECURITY.md).
 - **Merge and release:** only the owner merges and releases ([docs/RELEASING.md](docs/RELEASING.md)). An agent stops at a ready pull request.
 

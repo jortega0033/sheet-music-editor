@@ -4,13 +4,13 @@ The full repository instructions are in [CLAUDE.md](CLAUDE.md). This file repeat
 
 ## Status
 
-Nothing is implemented. The repository holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling and the backlog (epic #1). Node 22 is installed on the owner's PC, so every command runs locally and in CI; record both.
+Only the scaffold exists, no product behaviour. The repository holds the plan (`docs/PROJECT-PLAN.md`), the delivery tooling, the backlog (epic #1), the module layout and a static server. Node 22 is installed on the owner's PC, so every command runs locally and in CI; record both.
 
-## Commands (planned; the scaffold makes the first ones real)
+## Commands
 
 ```
-node --test
-node server/serve.mjs
+node --test             # real (scaffold)
+node server/serve.mjs   # real (scaffold): static empty shell; editor planned, from #2
 ```
 
 No npm dependency, no build step, no CDN reference. The server binds `127.0.0.1` only.

@@ -18,6 +18,8 @@ The owner made decisions 1 to 10 and 12 on 2026-11-22 for all repositories that 
 | 10 | Open decisions on tickets are settled with the ticket's stated default; where a ticket states none, the conservative option is taken and flagged in the issue. | decided by the owner | 2026-11-22 | The list below; the issues themselves |
 | 11 | Nothing is installed on the owner's PC for this project: Node is already there. No npm dependency is used, in the application or in tests. | recommended by the orchestrator, following the plan (static modules, Node's test runner) | 2026-11-23 | `CLAUDE.md` "Commands", `.github/workflows/ci.yml` |
 | 12 | The ten UI rules in `docs/ui-quality.md` are binding, and the `ui-ux-pro-max` and `unslop` skills are installed in the repository and used for UI work and for copy. | decided by the owner | 2026-11-22 | `docs/ui-quality.md`, `.claude/skills/` |
+| 13 | Visual system: the Pipenzo Flow look tokens. | decided by the owner | 2026-11-23 | `app/tokens.css`, `docs/design-tokens.md` |
+| 14 | Token rules 14-D1 to 14-D4. | 14-D1 use of yellow decided by the owner; how it is drawn, and 14-D2 to 14-D4, recommended by the orchestrator and adopted under the owner's delegation of 2026-11-23 | 2026-11-23 | `docs/design-tokens.md`; applied in UI tickets |
 
 ## Open ticket decisions settled by default (entry 10)
 
@@ -27,8 +29,8 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 |---|---|---|
 | all | Node version | 22, in CI and as `engines` in `package.json`. |
 | #2 | Fixed address | `http://127.0.0.1:8790`. A different port is a different origin with different drafts, so the server fails when the port is taken instead of choosing another. |
-| #2 | Keyboard entry | Letters A to G choose the pitch nearest to the previous note inside C4 to C6, arrow keys move it by a step, digits 1, 2 and 3 choose eighth, quarter and half, R enters a rest. All are also buttons. |
+| #2 | Keyboard entry | Letters A to G choose the pitch nearest to the previous note inside C4 to C6, Up and Down move it by a step while an event is open for editing (elsewhere arrows move within the list, as the plan says), digits 1, 2 and 3 choose eighth, quarter and half, R enters a rest. All are also buttons. |
 | #3 | Browser test method | Headless Chrome started from `node --test` over `--remote-debugging-pipe`, no dependency; Linux CI only, skipped locally when Chrome is absent and failing in CI when it is absent. PDF page counts come from `Page.printToPDF`. |
 | #5 | Schema check | The official MusicXML schema is not downloaded. Export is checked by an independent order check and a well-formedness parse with external resolution off. |
 | #6 | Draft slots | One draft per origin. No list of scores in this release. |
-| none | Licence | Not selected. No ticket depends on it and none adds a LICENSE. |
+| none | Licence | MIT, already in `LICENSE` on `main`. No ticket depends on it and none changes it. |
