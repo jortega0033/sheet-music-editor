@@ -9,3 +9,7 @@ Implementation is planned. The scope, architecture and acceptance criteria are i
 - [Implementation backlog and epic](https://github.com/jortega0033/sheet-music-editor/issues)
 
 Estimated implementation and verification effort is 14–20 engineering hours.
+
+## License
+
+[MIT](LICENSE) © 2026 Jake Ortega.
