@@ -29,8 +29,8 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 |---|---|---|
 | all | Node version | 22, in CI and as `engines` in `package.json`. |
 | #2 | Fixed address | `http://127.0.0.1:8790`. A different port is a different origin with different drafts, so the server fails when the port is taken instead of choosing another. |
-| #2 | Keyboard entry | Letters A to G choose the pitch nearest to the previous note inside C4 to C6, arrow keys move it by a step, digits 1, 2 and 3 choose eighth, quarter and half, R enters a rest. All are also buttons. |
+| #2 | Keyboard entry | Letters A to G choose the pitch nearest to the previous note inside C4 to C6, Up and Down move it by a step while an event is open for editing (elsewhere arrows move within the list, as the plan says), digits 1, 2 and 3 choose eighth, quarter and half, R enters a rest. All are also buttons. |
 | #3 | Browser test method | Headless Chrome started from `node --test` over `--remote-debugging-pipe`, no dependency; Linux CI only, skipped locally when Chrome is absent and failing in CI when it is absent. PDF page counts come from `Page.printToPDF`. |
 | #5 | Schema check | The official MusicXML schema is not downloaded. Export is checked by an independent order check and a well-formedness parse with external resolution off. |
 | #6 | Draft slots | One draft per origin. No list of scores in this release. |
-| none | Licence | Not selected. No ticket depends on it and none adds a LICENSE. |
+| none | Licence | MIT, already in `LICENSE` on `main`. No ticket depends on it and none changes it. |

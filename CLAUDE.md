@@ -6,7 +6,7 @@ Working instructions for this repository. Read this file first, then the documen
 
 An offline editor for a musician or teacher: enter a short melody with the keyboard, see it on a treble staff, recover the draft, exchange it as a small MusicXML 4.0 subset and print it. Static JavaScript modules, Canvas 2D, native controls, IndexedDB, a small Node server on `127.0.0.1`, no dependencies.
 
-**Only the scaffold exists, no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1, the toolchain, the module layout with empty modules, a static server and smoke tests. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing baseline: there is none.
+**Only the scaffold exists, no product behaviour.** The repository holds the plan, the delivery tooling, the backlog in epic #1, the toolchain, the module layout with empty modules, a static server and smoke tests. Commands marked planned below do not work yet. Do not describe a planned thing as working, and do not claim a passing product baseline: the smoke tests cover the scaffold only.
 
 ## Sources of truth
 
@@ -57,7 +57,7 @@ The planned module map is in [docs/architecture.md](docs/architecture.md). Invar
 - Drafts carry a schema version and a revision. Writes are serialised, the stored revision is compared in the same transaction, and "Saved" appears only after the transaction completes. Unknown or invalid records are kept.
 - Preview and print use the same coordinates. Layout is deterministic for the same score, page size and measured text.
 - Score text is rendered through text APIs, never as HTML. Same-origin assets only; the server binds `127.0.0.1` and serves an allowlist of files.
-- Everything works by keyboard: Tab to controls, arrows inside the list, Enter selects, a labelled Remove deletes. After an insert or removal focus stays in the measure. Selection, remaining ticks and errors are reported as text.
+- Everything works by keyboard: Tab to controls, arrows inside the list, Enter selects an event for editing, a labelled Remove deletes. After an insert or removal focus stays in the measure. Selection, remaining ticks and errors are reported as text.
 - An ordered, labelled measure and event list shows the same score as the canvas.
 
 ## Git workflow

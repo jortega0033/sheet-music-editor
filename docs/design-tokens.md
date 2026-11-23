@@ -20,7 +20,7 @@ The visual system is the Pipenzo "Flow look": a black page, Flow-style alpha lay
 
 ## Status
 
-No screen uses the tokens yet; every UI ticket follows these rules from its first screen. Served folder: `app/`. Not checked in a browser.
+The empty page shell links `tokens.css` and the server serves it; no screen uses the tokens yet; every UI ticket follows these rules from its first screen. Served folder: `app/`. Not checked in a browser.
 
 ## Light and dark
 

@@ -23,7 +23,8 @@ export function createAppServer() {
       res.writeHead(405, { ...headers, allow: "GET, HEAD" }).end();
       return;
     }
-    const entry = ALLOWLIST.get(new URL(req.url, "http://localhost").pathname);
+    // Split by hand: new URL() throws on request targets such as "//".
+    const entry = ALLOWLIST.get(req.url.split("?", 1)[0]);
     if (!entry) {
       res.writeHead(404, headers).end();
       return;
@@ -38,19 +39,14 @@ export function createAppServer() {
   });
 }
 
-const HELP = `Usage: node server/serve.mjs [--help] [--version] [browser-test]
+const HELP = `Usage: node server/serve.mjs [--help] [--version]
 
 Serves the app on http://${HOST}:${PORT}. Fails if the port is taken.
-  browser-test   headless Chrome runs (not built yet)
 `;
 
 function main(args) {
   if (args.includes("--help")) return void process.stdout.write(HELP);
   if (args.includes("--version")) return void console.log(VERSION);
-  if (args[0] === "browser-test") {
-    console.error("not implemented yet: see #3");
-    process.exit(1);
-  }
   if (args.length > 0) {
     console.error(`unknown argument: ${args[0]}`);
     process.exit(2);
