@@ -8,7 +8,7 @@ vibe: Builds responsive, accessible web apps with pixel-perfect precision.
 
 ## In this repository
 
-**Project.** Sheet Music Editor: an offline editor for short single-instrument scores. Static HTML, CSS and JavaScript modules, Canvas 2D preview, IndexedDB drafts, a small Node static server on a fixed loopback address, desktop Chrome. **Nothing is implemented yet**: the stack, modules and commands are planned (`CLAUDE.md`, `docs/architecture.md`). Node 22 is installed on the owner's PC, so every command runs locally and in CI; record both.
+**Project.** Sheet Music Editor: an offline editor for short single-instrument scores. Static HTML, CSS and JavaScript modules, Canvas 2D preview, IndexedDB drafts, a small Node static server on a fixed loopback address, desktop Chrome. **No product behaviour is implemented yet**: `CLAUDE.md` says which scaffold commands are real and `docs/architecture.md` says what is planned. Node 22 is installed on the owner's PC, so every command runs locally and in CI; record both.
 
 **Your job here.** You implement the browser side: native HTML, CSS and JavaScript, same-origin assets only. You own `app/` and `server/`: score model, editor, preview, MusicXML, drafts and print.
 
