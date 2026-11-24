@@ -34,3 +34,13 @@ The plan leaves these open. Each is a recommendation by the orchestrator, adopte
 | #5 | Schema check | The official MusicXML schema is not downloaded. Export is checked by an independent order check and a well-formedness parse with external resolution off. |
 | #6 | Draft slots | One draft per origin. No list of scores in this release. |
 | none | Licence | MIT, already in `LICENSE` on `main`. No ticket depends on it and none changes it. |
+
+## Program decisions (owner, 2026-11-24)
+
+The owner accepted the goal and each suggestion below. They apply from the phase they name; the rules of `CLAUDE.md` hold for phase 1 as written.
+
+| Decision | Implemented in |
+|---|---|
+| The repository has a program goal above phase 1: a professional music notation system, in six phases. | Program issue #34 |
+| Test suite and scores need a licence check. Suggested: public-domain music, own engravings. | Program issue #34 |
+| Recognition needs a training run. Suggested: small models on the CPU, trained from generated pages. | Program issue #34 |

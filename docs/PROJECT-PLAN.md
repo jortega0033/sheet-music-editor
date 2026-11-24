@@ -1,5 +1,7 @@
 # Sheet Music Editor
 
+> This document specifies phase 1 of the program in [#34](https://github.com/jortega0033/sheet-music-editor/issues/34). Hour figures in it are early estimates for that phase; its open tickets add up to 60 to 84 hours (2026-11-24). Work that it defers is planned in the later phases only where the program names it.
+
 ## Product requirements
 
 An instrumentalist or music teacher needs to jot down a short melody, revisit it during rehearsal, and hand out a readable page. The first release is a single-instrument score editor for local desktop Chrome. Its primary workflow is to enter notes and rests, see the staff update, save a draft, and print a score. MusicXML import and export move complete scores within a defined subset.
