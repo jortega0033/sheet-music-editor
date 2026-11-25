@@ -8,7 +8,7 @@ Only the scaffold exists: a static server, an empty page and empty modules. The 
 - [Technical design](docs/PROJECT-PLAN.md#technical-design)
 - [Implementation backlog and epic](https://github.com/jortega0033/sheet-music-editor/issues)
 
-Estimated implementation and verification effort is 14–20 engineering hours.
+The first plan of phase 1 said 14–20 engineering hours. Its open tickets, with tests and review, add up to 60 to 84 hours; the whole program is larger and is described below. All figures are estimates.
 
 ## Program goal
 
